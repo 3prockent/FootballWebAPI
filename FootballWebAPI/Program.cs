@@ -1,5 +1,7 @@
 using FootballWebAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using FootballWebAPI.Data.CountryData;
+using FootballWebAPI.Data.TournamentData;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +14,9 @@ builder.Services.AddSwaggerGen();
 
 string? ConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<FootballAPIContext>(options => options.UseSqlServer(ConnectionString));
+builder.Services.AddScoped<ICountryData, SqlCountryData>();
+builder.Services.AddScoped<ITournamentData, SqlTournamentData>();
 
-var Context = new FootballAPIContext();
 var app = builder.Build();
 
 //Configure the HTTP request pipeline.

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aRHMjSNFR8Bic9B/yWSB+F+NF8dn06HAYBVEwQs1cgdIt0oT4WyXLh6++4txCvzYOUncXD8t/v1g95gMZ14bLw==",
+  "dgSpecHash": "HL2hSiBvjz7GYd+Nk0O3essSjHnEN4oTLZl9DoNcIKSqn0wjWdkFBDD5ZmD+5VFxfnNXzsmLR+o8nKRhXAHDqQ==",
   "success": true,
   "projectFilePath": "C:\\Vlad\\C# proj\\FootballWebAPI\\FootballWebAPI\\FootballWebAPI.csproj",
   "expectedPackageFiles": [
@@ -37,6 +37,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0-preview.3.22175.4\\microsoft.win32.systemevents.7.0.0-preview.3.22175.4.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
