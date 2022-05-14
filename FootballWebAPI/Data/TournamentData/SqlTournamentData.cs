@@ -57,6 +57,10 @@ namespace FootballWebAPI.Data.TournamentData
             return _context.Tournaments.Any(c => c.Name.ToLower() == name.ToLower());
         }
 
-
+        public Tournament GetTournamentByName(string name)
+        {
+            Tournament tournament = _context.Tournaments.FirstOrDefault(c => c.Name.ToLower() == name.ToLower());
+            return tournament;
+        }
     }
 }

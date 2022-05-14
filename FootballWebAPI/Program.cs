@@ -2,6 +2,8 @@ using FootballWebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using FootballWebAPI.Data.CountryData;
 using FootballWebAPI.Data.TournamentData;
+using FootballWebAPI.Data.TeamData;
+using FootballWebAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,26 +12,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//builder.Services.AddSwaggerGen();
 
-string? ConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+string ConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<FootballAPIContext>(options => options.UseSqlServer(ConnectionString));
 builder.Services.AddScoped<ICountryData, SqlCountryData>();
 builder.Services.AddScoped<ITournamentData, SqlTournamentData>();
+builder.Services.AddScoped<ITeamData, SqlTeamData>();
+builder.Services.AddScoped<IFootballerData, SqlFootballerData>();
+builder.Services.AddScoped<IMatchData, SqlMatchData>();
 
 var app = builder.Build();
 
-//Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
 app.UseHttpsRedirection();
 app.UseRouting();
-app.UseEndpoints(endpoints =>endpoints.MapControllers());
 app.UseAuthorization();
+app.UseEndpoints(endpoints =>endpoints.MapControllers());
 
 app.MapControllers();
 

@@ -10,11 +10,17 @@ namespace FootballWebAPI.Data.Json
         }
         public object ToJson(Footballer footballer)
         {
+            string teamName;
+            if (footballer.TeamId == null)
+                teamName = null;
+            else
+                teamName = _context.Teams.First(t => t.TeamId == footballer.TeamId).Name;
+
             return new
             {
                 name = footballer.Name,
-                country = _context.Countries.First(c=>c.CountryId==footballer.CountryId)?.Name,
-                team = _context.Teams.First(t => t.TeamId == footballer.TeamId)?.Name
+                country = _context.Countries.First(c => c.CountryId == footballer.CountryId)?.Name,
+                team = teamName
             };
 
         }

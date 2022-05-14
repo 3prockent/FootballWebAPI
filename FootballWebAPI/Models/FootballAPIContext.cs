@@ -7,7 +7,7 @@ namespace FootballWebAPI.Models
 
         public FootballAPIContext(DbContextOptions<FootballAPIContext> options)
             : base(options)
-        { 
+        {
             if (Database.EnsureCreated())
             {
                 #region Init Countries
@@ -21,7 +21,7 @@ namespace FootballWebAPI.Models
                 #endregion
                 #region Init Teams
                 var Barcelona = new Team() { TeamId = Guid.NewGuid(), Name = "Barcelona", Country = Spain, BaseYear = 1899};
-                var RealMadrid = new Team() { TeamId = Guid.NewGuid(), Name = "Barcelona", Country = Spain, BaseYear = 1899};
+                var RealMadrid = new Team() { TeamId = Guid.NewGuid(), Name = "Real Madridma", Country = Spain, BaseYear = 1899};
 
                 Teams.AddRange(Barcelona, RealMadrid);
                 #endregion

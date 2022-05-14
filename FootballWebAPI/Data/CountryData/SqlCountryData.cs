@@ -21,6 +21,14 @@ namespace FootballWebAPI.Data.CountryData
             var country = _context.Countries.Find(id);
             return country;
         }
+
+        public Country GetCountry(string name)
+        {
+            var country = _context.Countries.First(c => c.Name.ToLower() == name.ToLower());
+            return country;
+        }
+
+
         public Country? AddCountry(string countryName)
         {
             var newCountry = new Country() {CountryId=Guid.NewGuid(),
